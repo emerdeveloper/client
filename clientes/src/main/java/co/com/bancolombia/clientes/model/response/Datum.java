@@ -39,6 +39,7 @@ public class Datum {
     @JsonProperty("email")
     private String email;
     private Boolean isUpdated;
+    private Boolean declarationReady;
     
     
     @JsonIgnore
@@ -140,5 +141,13 @@ public class Datum {
 
 	public void setUpdated(Boolean isUpdated) {
 		this.isUpdated = isUpdated;
+	}
+
+	public Boolean getDeclarationReady() {
+		return declarationReady;
+	}
+
+	public void setDeclarationReady(Boolean declarationReady) {
+		this.declarationReady = declarationReady;
 	}
 }
