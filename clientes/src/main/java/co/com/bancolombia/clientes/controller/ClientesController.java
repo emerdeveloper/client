@@ -1,6 +1,5 @@
 package co.com.bancolombia.clientes.controller;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -55,25 +54,13 @@ public class ClientesController {
 	      InputStream is = new FileInputStream(new File("src/main/resources/Example of Declaration.pdf"));
 	      // copy it to response's OutputStream
 	      org.apache.commons.io.IOUtils.copy(is, response.getOutputStream());
-	      response.flushBuffer();
+//	      response.flushBuffer();
+	      response.setContentType("application/pdf");
 	    } catch (IOException ex) {
 	      throw new RuntimeException("IOError writing file to output stream");
 	    } catch (Exception e) {
 	    	e.printStackTrace();
 	    }
-	}
-	
-	
-	@RequestMapping(value="/getDeclaration", method=RequestMethod.POST)
-	public ClientResponse getDeclaration(@RequestBody ClientRequest clientRequest) {
-		try {
-			return clientService.updateClientInformation(clientRequest);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 	
 }

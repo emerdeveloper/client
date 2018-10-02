@@ -39,9 +39,48 @@ public class Datum {
     @JsonProperty("email")
     private String email;
     private Boolean isUpdated;
+    private Boolean declarationReady;
+    private String pdf;
+    private String ocupation;
     
     
-    @JsonIgnore
+    public String getOcupation() {
+		return ocupation;
+	}
+
+	public void setOcupation(String ocupation) {
+		this.ocupation = ocupation;
+	}
+
+	public Boolean getIsUpdated() {
+		return isUpdated;
+	}
+
+	public void setIsUpdated(Boolean isUpdated) {
+		this.isUpdated = isUpdated;
+	}
+
+	public Boolean getDeclarationReady() {
+		return declarationReady;
+	}
+
+	public void setDeclarationReady(Boolean declarationReady) {
+		this.declarationReady = declarationReady;
+	}
+
+	public String getPdf() {
+		return pdf;
+	}
+
+	public void setPdf(String pdf) {
+		this.pdf = pdf;
+	}
+
+	public void setAdditionalProperties(Map<String, Object> additionalProperties) {
+		this.additionalProperties = additionalProperties;
+	}
+
+	@JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("header")

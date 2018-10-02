@@ -18,13 +18,12 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'docker'
 jar {
     baseName = 'clientes'
-    version =  'version.20180927.1'
+    version =  'version.20180927.7'
 }
-version = 'version.20180927.1'
+version = 'version.20180927.7'
 
-group = 'registry.ng.bluemix.net/negocios_bancolombia'
+group = 'registry.ng.bluemix.net/hamaga_dev'
 sourceCompatibility = 1.8
-version = 'version.20180927.1'
 task buildDocker(type: Docker, dependsOn: build) {
   push = false
   applicationName = jar.baseName
